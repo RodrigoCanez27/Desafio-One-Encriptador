@@ -1,0 +1,197 @@
+/* Estilos generales */
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    margin: 0;
+    background-color: #F3F5FC;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1400px;
+    height: 90%;
+    box-sizing: border-box;
+}
+
+/* Secciones de entrada y salida */
+.input-section, .output-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 45%;
+    height: 100%;
+    position: relative;
+}
+
+/* Área de texto */
+textarea {
+    width: 100%;
+    flex-grow: 1;
+    padding: 15px;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Botón de copiar dentro del textarea */
+#copyBtn {
+    position: absolute;
+    bottom: 10px; /* Ajusta la posición vertical aquí */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #0A3871;
+    border: 2px solid #0A3871;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+#copyBtn:hover {
+    background-color: #f0f0f0;
+    color: #0056b3;
+}
+
+/* Botones de encriptar y desencriptar */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 15px;
+    font-size: 24px;
+    margin-top: 3%;
+    border-radius: 24px; /* Redondeado */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+    width: 48%;
+}
+
+#encryptBtn {
+    background-color: #0A3871;
+    color: white;
+    border: 2px solid #0A3871;
+}
+
+#encryptBtn:hover {
+    background-color: #082a5a;
+}
+
+#decryptBtn {
+    background-color: transparent;
+    color: #0A3871;
+    border: 2px solid #0A3871;
+}
+
+#decryptBtn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Nota de advertencia */
+.note {
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    margin-top: 10px;
+}
+
+/* Estilos Responsivos para pantallas de 768px a 375px */
+@media (max-width: 768px) and (min-width: 376px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        padding: 20px;
+    }
+
+    .input-section, .output-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    button {
+        width: 48%;
+    }
+
+    #copyBtn {
+        position: static;
+        transform: none;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    textarea {
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilos Responsivos para pantallas de 375px o menos */
+@media (max-width: 375px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        padding: 10px;
+    }
+
+    .input-section, .output-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    #copyBtn {
+        position: static;
+        transform: none;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    textarea {
+        margin-bottom: 10px;
+    }
+}
